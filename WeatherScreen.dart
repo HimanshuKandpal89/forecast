@@ -87,8 +87,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
           final pressure =  data['list'][0]['main']['pressure'];
           final humidity =  data['list'][0]['main']['humidity'];
           final windspeed = data['list'][0]['wind']['speed'];
-          final newicon = data['list'][1]['weather'][0]['main'];
-
+        
           // to get the icons displayed on the main tab
            geticon(){
             if(currentsky == "Snow"){
@@ -106,27 +105,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
             
 
           }
-          getnewicon(){
-            for(int i = 1;i<5;i++){
-              if(data['list'][i+1]['weather'][0]['main'] == 'Snow'){
-                return Icons.snowing;
-              }
-               if(data['list'][i+1]['weather'][0]['main']== 'Clear'){
-                return Icons.sunny;
-              }
-               if(data['list'][i+1]['weather'][0]['main']== 'Clouds'){
-                return Icons.cloud;
-              }
-              //  if(data['list'][i+1]['weather'][0]['main']== 'Rain'){
-              //   return Icons.water_drop_outlined;
-              // }
-
-
-            }
-          }
-
-
-
+       
 
 
           return Padding(
